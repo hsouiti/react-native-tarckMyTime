@@ -8,17 +8,15 @@
  * @format
  */
 
-import React from 'react';
-import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
+import * as React from 'react';
+import { SafeAreaView, StyleSheet, View, Text, } from 'react-native';
 
 
 const App = () => {
     return (
         <>
             <SafeAreaView>
-                <View>
-                    <Text>Hello</Text>
-                </View>
+                <Text>App</Text>
             </SafeAreaView>
         </>
     );
