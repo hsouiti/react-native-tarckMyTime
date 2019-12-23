@@ -9,22 +9,16 @@
  */
 
 import React from 'react';
-import {
-    SafeAreaView,
-    StyleSheet,
-    ScrollView,
-    View,
-    Text,
-} from 'react-native';
+import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
 
 
 const App = () => {
     return (
         <>
             <SafeAreaView>
-                <ScrollView>
+                <View>
                     <Text>Hello</Text>
-                </ScrollView>
+                </View>
             </SafeAreaView>
         </>
     );
