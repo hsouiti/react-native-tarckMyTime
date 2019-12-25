@@ -1,12 +1,18 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import { SCREENS } from '../global/screens'
 
-const TarckScreen = () => {
+const TrackScreen = () => {
     return (
         <View>
-            <Text>Home Screen</Text>
+            <Text>Track Screen</Text>
         </View>
     )
 }
 
-export default TarckScreen 
+TrackScreen.navigationOptions = {
+    title: SCREENS.TRACK
+}
+
+
+export default TrackScreen 

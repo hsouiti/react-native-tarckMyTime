@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 const StatisticsScreen = () => {
     return (
         <View>
-            <Text>Home Screen</Text>
+            <Text>Statistics Screen</Text>
         </View>
     )
 }

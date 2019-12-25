@@ -1,11 +1,12 @@
 import React from 'react'
 import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
 
-import { HomeScreen, SettingsScreen, trackScreen, StatisticsScreen } from '../screens'
+import { HomeScreen, SettingsScreen, TrackScreen, StatisticsScreen } from '../screens'
 
 import { SCREENS } from '../global/screens'
 import { Colors } from '../global/styles'
@@ -21,11 +22,9 @@ const tabRoutesConfig = {
                 return <Icon name={'ios-home'} size={iconSize} color={tintColor} />
             }
         }
-
-
     },
     Track: {
-        screen: trackScreen,
+        screen: TrackScreen,
         navigationOptions: {
             tabBarLabel: SCREENS.TRACK,
             tabBarIcon: ({ tintColor }: { tintColor: string }) => {
@@ -37,15 +36,22 @@ const tabRoutesConfig = {
         screen: SettingsScreen,
         navigationOptions: {
             tabBarLabel: SCREENS.SETTINGS,
+            tabBarIcon: ({ tintColor }: { tintColor: string }) => {
+                return <Icon name={'ios-options'} size={iconSize} color={tintColor} />
+            }
+
         }
     },
     Statistics: {
         screen: StatisticsScreen,
         navigationOptions: {
             tabBarLabel: SCREENS.STATISTICS,
+            tabBarIcon: ({ tintColor }: { tintColor: string }) => {
+                return <Icon name={'ios-stats'} size={iconSize} color={tintColor} />
+            }
+
         }
     }
-
 }
 
 
@@ -56,7 +62,7 @@ const defaultBottomOptions = {
     shifting: false,
     initialRouteName: SCREENS.HOME,
     barStyle: {
-        //backgroundColor: 'blue'
+
     }
 }
 
@@ -67,4 +73,9 @@ const mainNavigator = createMaterialBottomTabNavigator(
 
 )
 
-export default createAppContainer(mainNavigator)
+// Header Bar
+const AppNav = createStackNavigator({
+    main: mainNavigator
+})
+
+export default createAppContainer(AppNav)
