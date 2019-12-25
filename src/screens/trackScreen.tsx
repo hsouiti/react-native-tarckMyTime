@@ -9,4 +9,4 @@ const TarckScreen = () => {
     )
 }
 
-export default TrackScreen 
+export default TarckScreen 

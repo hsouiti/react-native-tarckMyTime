@@ -12,7 +12,7 @@ import * as React from 'react';
 import { enableScreens } from 'react-native-screens';
 
 import AppNavigator from './navigation/AppNavigator'
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
 
 enableScreens();
@@ -20,14 +20,9 @@ enableScreens();
 const App = () => {
     return (
         <>
-            <SafeAreaView>
-                <AppNavigator />
-            </SafeAreaView>
+            <AppNavigator />
         </>
     );
 };
-
-const styles = StyleSheet.create({
-});
 
 export default App;
