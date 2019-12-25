@@ -9,14 +9,19 @@
  */
 
 import * as React from 'react';
-import { SafeAreaView, StyleSheet, View, Text, } from 'react-native';
+import { enableScreens } from 'react-native-screens';
 
+import AppNavigator from './navigation/AppNavigator'
+import { SafeAreaView } from 'react-native';
+
+
+enableScreens();
 
 const App = () => {
     return (
         <>
             <SafeAreaView>
-                <Text>App</Text>
+                <AppNavigator />
             </SafeAreaView>
         </>
     );
