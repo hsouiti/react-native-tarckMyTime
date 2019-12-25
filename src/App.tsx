@@ -12,7 +12,6 @@ import * as React from 'react';
 import { enableScreens } from 'react-native-screens';
 
 import AppNavigator from './navigation/AppNavigator'
-import { SafeAreaView, Text } from 'react-native';
 
 
 enableScreens();
