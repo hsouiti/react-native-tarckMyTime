@@ -12,7 +12,6 @@ const HomeScreen = () => {
 }
 
 HomeScreen.navigationOptions = ({ navigation }: { navigation: any }) => {
-
     console.log(navigation)
     return {
         title: SCREENS.HOME

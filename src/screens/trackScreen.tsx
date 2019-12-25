@@ -1,17 +1,18 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import { SCREENS } from '../global/screens'
 
-const TrackScreen = () => {
+const TrackScreen = (props) => {
     return (
         <View>
             <Text>Track Screen</Text>
+            <Button title='goto test' onPress={() => props.navigation.navigate('test')} />
         </View>
     )
 }
 
 TrackScreen.navigationOptions = {
-    title: SCREENS.TRACK
+    headerTitle: SCREENS.TRACK
 }
 
 
