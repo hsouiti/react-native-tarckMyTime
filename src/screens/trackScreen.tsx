@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import {NavigationScreenComponent} from 'react-navigation'
 
 import { SCREENS } from '../global/screens'
 
@@ -14,7 +13,7 @@ const TrackScreen = () => {
 }
 
 TrackScreen.navigationOptions = {
-    headerTitle: SCREENS.TRACK
+    title: SCREENS.TRACK
 }
 
 

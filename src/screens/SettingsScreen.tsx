@@ -12,9 +12,9 @@ const SettingsScreen = () => {
 }
 
 
-/* SettingsScreen.navigationOptions = {
+SettingsScreen.navigationOptions = {
     headerTitle: SCREENS.SETTINGS
-} */
+}
 
 
 export default SettingsScreen  

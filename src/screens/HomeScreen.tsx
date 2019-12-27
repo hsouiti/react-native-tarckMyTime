@@ -10,9 +10,8 @@ const HomeScreen = () => {
         </View>
     )
 }
-
-HomeScreen.navigationOptions = ({ navigation }: { navigation: any }) => {
-    console.log(navigation)
+//({ navigation }: { navigation: any })
+HomeScreen.navigationOptions = () => {
     return {
         title: SCREENS.HOME
     }
