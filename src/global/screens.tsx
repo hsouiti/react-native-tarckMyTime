@@ -3,6 +3,7 @@ export const SCREENS = {
     HOME: 'Home',
     TRACK: 'Track',
     STATISTICS: 'Statistics',
-    SETTINGS: 'Settings'
+    SETTINGS: 'Settings',
+    CATEGORIES: 'Categories'
 }
 
