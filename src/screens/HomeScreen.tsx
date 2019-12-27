@@ -6,7 +6,6 @@ import Categories from './CategoriesScreen'
 const HomeScreen = () => {
     return (
         <View>
-            <Text>Home Screen</Text>
             <Categories />
         </View>
     )

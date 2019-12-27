@@ -1,22 +1,29 @@
 import React from 'react'
-import { FlatList, Text } from 'react-native'
+import { FlatList, Text, SafeAreaView, View } from 'react-native'
 
 import { categoryType } from '../types'
 import { SCREENS } from '../global/screens'
 import Category from '../components/Category'
-
 import { CATEGORIES } from '../data/data'
 
+
+///{ id: string, title: string, color: string } 
 const CategoriesScreen = () => {
-    const renderCategory = ({ item }) => {
-        return <Category key={item.id} id={item.id} title={item.title} color={item.color} />
+    const renderItem = ({ item }: { item: categoryType }) => {
+        const { id, title, color } = item
+        return <Category key={id} id={id} title={title} color={color} />
     }
 
     return (
-        <FlatList
-            data={CATEGORIES}
-            renderItem={renderCategory}
-        />
+        <SafeAreaView>
+            <View>
+                <Text>Categories</Text>
+            </View>
+            <FlatList
+                data={CATEGORIES}
+                renderItem={renderItem}
+            />
+        </SafeAreaView>
     )
 }
 

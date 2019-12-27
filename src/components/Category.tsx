@@ -5,8 +5,8 @@ import { categoryType } from '../types'
 
 const Category: React.FC<categoryType> = ({ id, title, color }) => {
     return (
-        <View>
-            <Text style={{ color: color }}>Cat => {id} - {title} - {color}</Text>
+        <View style={{ borderBottomWidth: 1, borderColor: 'grey', padding: 10 }}>
+            <Text style={{ color: color }}>Cat ::=> {id} - {title}</Text>
         </View>
     )
 }
