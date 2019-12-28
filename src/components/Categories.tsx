@@ -14,7 +14,7 @@ const Categories = () => {
     }
 
     return (
-        <View style={styles.catgoriesContainer}>
+        <View>
             <View style={titleWrapper}>
                 <Text style={globalTitle}>Categories List</Text>
             </View>
@@ -29,11 +29,6 @@ const Categories = () => {
 
 
 const styles = StyleSheet.create({
-    catgoriesContainer: {
-        flex: 1,
-        paddingTop: 8,
-        paddingHorizontal: 10,
-        backgroundColor: Colors.lightGray
-    }
+
 })
 export default Categories 

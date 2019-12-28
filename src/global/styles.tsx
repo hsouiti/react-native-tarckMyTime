@@ -15,7 +15,7 @@ export const Colors = {
     lightGray: '#EEEEEE',
     grey: '#9E9E9E',
     white: '#FFF',
-    red: 'red'
+    green: '#09af00'
 }
 
 export const titleWrapper = {
@@ -29,5 +29,15 @@ export const globalTitle: TextStyle = {
 }
 
 export const globalContainer = {
-    flex: 1
+    flex: 1,
+    backgroundColor: Colors.white
+}
+
+export const input = {
+    borderColor: Colors.grey,
+    backgroundColor: Colors.white,
+    width: '80%',
+    paddingHorizontal: 20,
+    borderRadius: 50,
+
 }

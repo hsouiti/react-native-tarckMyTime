@@ -12,6 +12,7 @@ import * as React from 'react';
 import { enableScreens } from 'react-native-screens';
 
 import AppNavigator from './navigation/AppNavigator'
+import { ScrollView } from 'react-native';
 
 
 enableScreens();

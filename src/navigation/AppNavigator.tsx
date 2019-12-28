@@ -13,36 +13,55 @@ import { Colors } from '../global/styles'
 
 const iconSize = 25
 
+const setHeaderStyle = (elevation: number, bg: string) => {
+    return {
+        elevation, bg
+    }
+}
+
+const defaultNavigation = {
+    headerStyle: {
+        backgroundColor: Colors.primaryColor,
+        elevation: 0,
+    },
+    headerTintColor: Colors.white,
+    headerTitleStyle: {
+        fontWeight: 'bold',
+        textAlign: 'center',
+        flex: 1,
+    },
+}
+
 const homeStack = createStackNavigator(
-    {HomeScreen},
+    { HomeScreen },
     {
         navigationOptions: {
             tabBarLabel: SCREENS.HOME,
             tabBarIcon: ({ tintColor }: { tintColor: string }) => {
                 return <Icon name={'ios-home'} size={iconSize} color={tintColor} />
             }
-        }  
+        }
     }
-)    
+)
 
 const trackStack = createStackNavigator(
-    { TrackScreen}, 
+    { TrackScreen },
     {
         navigationOptions: {
             tabBarLabel: SCREENS.TRACK,
             tabBarIcon: ({ tintColor }: { tintColor: string }) => {
                 return <Icon name={'ios-clock'} size={iconSize} color={tintColor} />
-            }
-        }  
+            },
+        },
+        defaultNavigationOptions: defaultNavigation
     }
 
-)  
+)
 
 const settingsStack = createStackNavigator(
-     {SettingsScreen},
-{
+    { SettingsScreen },
+    {
         navigationOptions: {
-            title: 'hhhhhhhhhhhh',
             tabBarLabel: SCREENS.SETTINGS,
             tabBarIcon: ({ tintColor }: { tintColor: string }) => {
                 return <Icon name={'ios-options'} size={iconSize} color={tintColor} />
@@ -51,32 +70,31 @@ const settingsStack = createStackNavigator(
 
         }
     }
-    )
+)
 
-const  statisticsStack = createStackNavigator(
-{StatisticsScreen},
- {
-    navigationOptions: {
-        title: 'hhhhhhhhhhhh',
-        tabBarLabel: SCREENS.STATISTICS,
-        tabBarIcon: ({ tintColor }: { tintColor: string }) => {
-            return <Icon name={'ios-stats'} size={iconSize} color={tintColor} />
+const statisticsStack = createStackNavigator(
+    { StatisticsScreen },
+    {
+        navigationOptions: {
+            tabBarLabel: SCREENS.STATISTICS,
+            tabBarIcon: ({ tintColor }: { tintColor: string }) => {
+                return <Icon name={'ios-stats'} size={iconSize} color={tintColor} />
+            }
         }
     }
-}
 )
 
 
 const tabStack = {
-    homeStack,    
     trackStack,
+    homeStack,
     settingsStack,
     statisticsStack
 }
 
 
 const defaultBottomOptions = {
-    activeColor: Colors.red,
+    activeColor: Colors.green,
     inactiveColor: Colors.lightGray,
     labeled: true,
     shifting: false,
@@ -89,7 +107,7 @@ const defaultBottomOptions = {
 const mainNavigator = createMaterialBottomTabNavigator(
     tabStack,
     defaultBottomOptions
-) 
+)
 
 
 export default createAppContainer(mainNavigator)
