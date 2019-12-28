@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 
 import { Colors, input } from '../global/styles'
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 const { width, height }: { width: number, height: number } = Dimensions.get('screen')
@@ -12,7 +13,7 @@ const { width, height }: { width: number, height: number } = Dimensions.get('scr
 const Watch = () => {
     return (
         <View style={styles.container}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                 <Icon name={'ios-timer'} size={30} color={Colors.white} />
                 <Text style={styles.title}>Track your activity</Text>
             </View>
@@ -37,9 +38,6 @@ const Watch = () => {
                 <View style={styles.details}>
                     <Text style={styles.item}>Start At : </Text>
                     <Text style={styles.item}>End At : </Text>
-                    <Text style={styles.item}>Category : </Text>
-                    <Text style={styles.item}>Title : </Text>
-                    <Text style={styles.item}>Time : </Text>
                 </View>
 
             </View>
@@ -50,7 +48,7 @@ const Watch = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.primaryColor,
-        alignItems: 'center',
+
         paddingTop: 5
     },
     title: {
@@ -59,7 +57,7 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     tracking: {
-        height: (height / 3) - 20,
+        height: (height / 2) - 70,
         width: '100%',
         position: 'relative',
     },
@@ -73,7 +71,8 @@ const styles = StyleSheet.create({
     },
     time: {
         textAlign: 'center',
-        fontSize: 50,
+        fontSize: 52,
+        letterSpacing: 4,
         fontWeight: 'bold',
         color: Colors.white
     },
@@ -110,17 +109,19 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingTop: 10,
         zIndex: 1,
+        flex: 1,
     },
     details: {
         paddingTop: 30,
         paddingHorizontal: 20,
+        flex: 1
     },
     item: {
-        paddingVertical: 5,
+        padding: 10,
         fontSize: 18,
+        backgroundColor: Colors.green,
+        marginVertical: 5
     }
-
-
 })
 
 export default Watch
