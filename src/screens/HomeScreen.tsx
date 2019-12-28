@@ -2,10 +2,12 @@ import React from 'react'
 import { View, Text } from 'react-native'
 
 import { SCREENS } from '../global/screens'
-import Categories from './CategoriesScreen'
+import { globalContainer } from '../global/styles'
+import Categories from '../components/Categories'
+
 const HomeScreen = () => {
     return (
-        <View>
+        <View style={globalContainer}>
             <Categories />
         </View>
     )

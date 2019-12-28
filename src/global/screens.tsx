@@ -1,7 +1,7 @@
 
 export const SCREENS = {
     HOME: 'Home',
-    TRACK: 'Track',
+    TRACK: 'Watch',
     STATISTICS: 'Statistics',
     SETTINGS: 'Settings',
     CATEGORIES: 'Categories'

@@ -8,7 +8,6 @@ export class Category {
     id: string;
     title: string;
     color: string;
-
     constructor(obj: cat) {
         this.id = obj.id
         this.title = obj.title
