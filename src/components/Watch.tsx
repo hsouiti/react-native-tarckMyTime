@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { Colors, input } from '../global/styles'
 import { ScrollView } from 'react-native-gesture-handler';
-
+import { CATEGORIES } from '../data/data'
 
 const { width, height }: { width: number, height: number } = Dimensions.get('screen')
 
@@ -19,10 +19,12 @@ const Watch = () => {
             </View>
             <View style={styles.tracking}>
                 <View style={styles.category}>
-                    <TextInput style={input} placeholder='Choose Catgeory...' />
+                    <Text>Choose Catgeory...</Text>
+                    {CATEGORIES.map(cat => <Text key={cat.id}>{cat.title}</Text>)}
+                    {/* <TextInput style={input} placeholder='Choose Catgeory...' /> */}
                 </View>
                 <View style={styles.timer}>
-                    <Text style={styles.time}>08:05:22</Text>
+                    <Text style={styles.time}>00:08:05:22</Text>
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity
@@ -48,7 +50,6 @@ const Watch = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.primaryColor,
-
         paddingTop: 5
     },
     title: {
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     tracking: {
-        height: (height / 2) - 70,
+        height: (height / 2) - 90,
         width: '100%',
         position: 'relative',
     },
@@ -65,14 +66,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 10,
+        height: 0,
+        overflow: "hidden"
     },
     timer: {
         height: 100,
     },
     time: {
         textAlign: 'center',
-        fontSize: 52,
-        letterSpacing: 4,
+        fontSize: 40,
+        letterSpacing: 1,
         fontWeight: 'bold',
         color: Colors.white
     },
@@ -97,6 +100,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.green,
         justifyContent: 'center',
         alignItems: 'center',
+        zIndex: 2
     },
     action: {
         fontSize: 18,
@@ -107,14 +111,12 @@ const styles = StyleSheet.create({
     wrapperDetails: {
         backgroundColor: Colors.white,
         width: '100%',
-        paddingTop: 10,
-        zIndex: 1,
-        flex: 1,
+        zIndex: -1,
     },
     details: {
-        paddingTop: 30,
+        paddingTop: 60,
+        paddingBottom: 30,
         paddingHorizontal: 20,
-        flex: 1
     },
     item: {
         padding: 10,
