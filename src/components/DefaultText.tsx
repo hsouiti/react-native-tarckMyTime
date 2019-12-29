@@ -1,9 +1,7 @@
 import React from 'react'
-import { View, Text, TextStyle } from 'react-native'
+import { Text } from 'react-native'
 
-const DefaultText: React.FC = (props) => {
-    return <Text style={{ ...props.data }}>{props.children}</Text>
 
-}
+const DefaultText: React.FC<{ styles?: object }> = ({ children, styles }) => <Text style={{ ...styles }}>{children}</Text>
 
 export default DefaultText

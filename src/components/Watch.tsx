@@ -7,6 +7,7 @@ import CalendarPicker from 'react-native-calendar-picker';
 import { Colors, input, inputHolder, button, textButton } from '../global/styles'
 import Categories from '../components/Categories';
 import DefaultText from '../components/DefaultText'
+import InputText from '../components/InputText'
 
 const { width, height }: { width: number, height: number } = Dimensions.get('screen')
 
@@ -15,20 +16,15 @@ const Watch = () => {
         <View style={styles.container}>
             <View style={styles.tracking}>
                 <View style={styles.category}>
-                    <Text style={{ color: Colors.white, marginBottom: 5 }}>
+                    <DefaultText styles={{ color: Colors.white, marginBottom: 5 }}>
                         Scroll to choose Catgeory &amp; start tracking...
-                    </Text>
-                    {/* <DefaultText data={{ color: Colors.white, marginBottom: 5 }}>
-                        DefaultText
-                     </DefaultText> */}
-
+                    </DefaultText>
                     <Categories numCol={1} horizontal={true} />
                 </View>
-                <View style={inputHolder}>
-                    <TextInput style={input} placeholder='Title / Description...' />
-                </View>
+                <InputText placeholder='Title / Description...' />
+
                 <View style={styles.timer}>
-                    <Text style={styles.time}>00:08:05:22</Text>
+                    <DefaultText styles={styles.time}>00:08:05:20</DefaultText>
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity
@@ -72,11 +68,9 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         maxHeight: 100,
         width: '90%',
-        // backgroundColor: 'red'
     },
     timer: {
         maxHeight: 60,
-        //backgroundColor: 'red'
     },
     time: {
         textAlign: 'center',
