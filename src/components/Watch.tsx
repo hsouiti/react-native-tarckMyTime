@@ -6,6 +6,7 @@ import CalendarPicker from 'react-native-calendar-picker';
 
 import { Colors, input, inputHolder, button, textButton } from '../global/styles'
 import Categories from '../components/Categories';
+import DefaultText from '../components/DefaultText'
 
 const { width, height }: { width: number, height: number } = Dimensions.get('screen')
 
@@ -14,7 +15,13 @@ const Watch = () => {
         <View style={styles.container}>
             <View style={styles.tracking}>
                 <View style={styles.category}>
-                    <Text style={{ color: Colors.white, marginBottom: 5 }}>Choose Catgeory & start tracking...</Text>
+                    <Text style={{ color: Colors.white, marginBottom: 5 }}>
+                        Scroll to choose Catgeory &amp; start tracking...
+                    </Text>
+                    {/* <DefaultText data={{ color: Colors.white, marginBottom: 5 }}>
+                        DefaultText
+                     </DefaultText> */}
+
                     <Categories numCol={1} horizontal={true} />
                 </View>
                 <View style={inputHolder}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 import { categoryType } from '../types'
 import { Colors } from '../global/styles'
@@ -7,9 +7,13 @@ import { Colors } from '../global/styles'
 
 const Category: React.FC<categoryType> = ({ title, color }) => {
     return (
-        <View style={{ ...styles.category, borderColor: color }} >
-            <Text style={styles.title}>{title}</Text>
-        </View>
+        <TouchableOpacity
+            onPress={() => console.log(title)}
+        >
+            <View style={{ ...styles.category, borderColor: color, ...styles.active }} >
+                <Text style={styles.title}>{title}</Text>
+            </View>
+        </TouchableOpacity>
     )
 }
 
@@ -28,6 +32,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 13,
+    },
+    active: {
+        backgroundColor: 'red'
     }
 })
 

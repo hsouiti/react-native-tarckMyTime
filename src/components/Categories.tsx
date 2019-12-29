@@ -1,16 +1,19 @@
 import React from 'react'
-import { FlatList, Text, View, StyleSheet } from 'react-native'
+import { FlatList, View, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 
 import { categoryType } from '../types'
 import Category from './Category'
 import { CATEGORIES } from '../data/data'
-import { globalTitle, Colors, titleWrapper } from '../global/styles'
+
 
 const Categories = ({ numCol, horizontal }: { numCol?: number, horizontal: boolean }) => {
 
     const renderItem = ({ item }: { item: categoryType }) => {
         const { id, title, color } = item
-        return <Category key={id} id={id} title={title} color={color} />
+        return (
+
+            <Category key={id} id={id} title={title} color={color} />
+        )
     }
 
     return (
