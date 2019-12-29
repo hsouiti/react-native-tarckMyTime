@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import CalendarPicker from 'react-native-calendar-picker';
 
 
-import { Colors, input, inputHolder, button, textButton } from '../global/styles'
+import { Colors, button, textButton } from '../global/styles'
 import Categories from '../components/Categories';
 import DefaultText from '../components/DefaultText'
 import InputText from '../components/InputText'
@@ -27,8 +27,7 @@ const Watch = () => {
                     <DefaultText styles={styles.time}>00:08:05:20</DefaultText>
                 </View>
                 <View style={styles.buttons}>
-                    <TouchableOpacity
-                        style={styles.start}
+                    <TouchableOpacity style={styles.start}
                         onPress={() => console.log('start')}
                     >
                         <Icon name='ios-play' size={40} color={Colors.white} />
@@ -38,8 +37,8 @@ const Watch = () => {
 
             <View style={styles.wrapperDetails}>
                 <View style={styles.details}>
-                    <Text style={styles.item}>Start At : </Text>
-                    <Text style={styles.item}>End At : </Text>
+                    <DefaultText styles={styles.item}>Start at: </DefaultText>
+                    <DefaultText styles={styles.item}>End at: </DefaultText>
                 </View>
                 <TouchableOpacity style={button} onPress={() => console.log('finish')} >
                     <Text style={textButton}>Finish</Text>
