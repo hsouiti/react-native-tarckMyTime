@@ -1,4 +1,4 @@
-import { TextStyle } from "react-native"
+import { TextStyle, ViewStyle } from "react-native"
 
 export const Fonts = {
     boldFont: 'OpenSans-Bold',
@@ -12,6 +12,7 @@ export const Fonts = {
 export const Colors = {
     primaryColor: '#1565C0',
     primaryColorLight: '#1976D2',
+    secondaryColor: 'coral',
     lightGray: '#EEEEEE',
     grey: '#9E9E9E',
     white: '#FFF',
@@ -43,4 +44,18 @@ export const input = {
 export const inputHolder = {
     width: '80%',
     marginBottom: 10
+}
+
+export const button: ViewStyle = {
+    borderRadius: 10,
+    height: 45,
+    width: '100%',
+    backgroundColor: Colors.secondaryColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+}
+export const textButton: TextStyle = {
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: 'bold'
 }

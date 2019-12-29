@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions, TextInput, Picker } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions, TextInput } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
 import CalendarPicker from 'react-native-calendar-picker';
 
 
-import { Colors, input, inputHolder } from '../global/styles'
+import { Colors, input, inputHolder, button, textButton } from '../global/styles'
 import Categories from '../components/Categories';
 
 const { width, height }: { width: number, height: number } = Dimensions.get('screen')
@@ -25,7 +25,7 @@ const Watch = () => {
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity
-                        style={styles.button}
+                        style={styles.start}
                         onPress={() => console.log('start')}
                     >
                         <Icon name='ios-play' size={40} color={Colors.white} />
@@ -38,7 +38,9 @@ const Watch = () => {
                     <Text style={styles.item}>Start At : </Text>
                     <Text style={styles.item}>End At : </Text>
                 </View>
-
+                <TouchableOpacity style={button} onPress={() => console.log('finish')} >
+                    <Text style={textButton}>Finish</Text>
+                </TouchableOpacity>
             </View>
         </View >
     )
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
         width: '100%',
         position: 'relative',
         paddingTop: 5,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     category: {
         justifyContent: 'center',
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
         left: (width / 2) - 50,
         zIndex: 2,
     },
-    button: {
+    start: {
         height: 80,
         width: 80,
         borderRadius: 100,
@@ -109,16 +111,20 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.white,
         width: '100%',
         zIndex: -1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 20
     },
     details: {
-        paddingTop: 60,
-        paddingBottom: 30,
-        paddingHorizontal: 20,
+        paddingTop: 30,
+        paddingBottom: 10,
+        //paddingHorizontal: 20,
+        width: '100%'
     },
     item: {
         padding: 10,
         fontSize: 18,
-        backgroundColor: Colors.green,
+        //backgroundColor: Colors.green,
         marginVertical: 5
     }
 })
