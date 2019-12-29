@@ -5,7 +5,7 @@ import { categoryType } from '../types'
 import { Colors } from '../global/styles'
 
 
-const Category: React.FC<categoryType> = ({ id, title, color }) => {
+const Category: React.FC<categoryType> = ({ title, color }) => {
     return (
         <View style={{ ...styles.category, borderColor: color }} >
             <Text style={styles.title}>{title}</Text>
@@ -16,16 +16,18 @@ const Category: React.FC<categoryType> = ({ id, title, color }) => {
 const styles = StyleSheet.create({
     category: {
         flex: 1,
-        borderBottomWidth: 2,
+        borderBottomWidth: 4,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 30,
+        paddingHorizontal: 20,
+        paddingVertical: 5,
         backgroundColor: Colors.white,
-        margin: 10,
+        marginHorizontal: 10,
+        maxHeight: 90,
+        height: 80
     },
     title: {
-        fontSize: 16,
-
+        fontSize: 13,
     }
 })
 

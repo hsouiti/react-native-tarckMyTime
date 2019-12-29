@@ -1,27 +1,24 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions, TextInput, Picker } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
+import CalendarPicker from 'react-native-calendar-picker';
 
 
-
-import { Colors, input } from '../global/styles'
-import { ScrollView } from 'react-native-gesture-handler';
-import { CATEGORIES } from '../data/data'
+import { Colors, input, inputHolder } from '../global/styles'
+import Categories from '../components/Categories';
 
 const { width, height }: { width: number, height: number } = Dimensions.get('screen')
 
 const Watch = () => {
     return (
         <View style={styles.container}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                <Icon name={'ios-timer'} size={30} color={Colors.white} />
-                <Text style={styles.title}>Track your activity</Text>
-            </View>
             <View style={styles.tracking}>
                 <View style={styles.category}>
-                    <Text>Choose Catgeory...</Text>
-                    {CATEGORIES.map(cat => <Text key={cat.id}>{cat.title}</Text>)}
-                    {/* <TextInput style={input} placeholder='Choose Catgeory...' /> */}
+                    <Text style={{ color: Colors.white, marginBottom: 5 }}>Choose Catgeory & start tracking...</Text>
+                    <Categories numCol={1} horizontal={true} />
+                </View>
+                <View style={inputHolder}>
+                    <TextInput style={input} placeholder='Title / Description...' />
                 </View>
                 <View style={styles.timer}>
                     <Text style={styles.time}>00:08:05:22</Text>
@@ -52,25 +49,25 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.primaryColor,
         paddingTop: 5
     },
-    title: {
-        color: Colors.white,
-        marginLeft: 10,
-        fontSize: 18
-    },
     tracking: {
-        height: (height / 2) - 90,
+        height: (height / 2) - 20,
         width: '100%',
         position: 'relative',
+        paddingTop: 5,
+        alignItems: 'center'
     },
     category: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10,
-        height: 0,
-        overflow: "hidden"
+        padding: 10,
+        marginBottom: 15,
+        maxHeight: 100,
+        width: '90%',
+        // backgroundColor: 'red'
     },
     timer: {
-        height: 100,
+        maxHeight: 60,
+        //backgroundColor: 'red'
     },
     time: {
         textAlign: 'center',

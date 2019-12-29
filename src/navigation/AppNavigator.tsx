@@ -19,7 +19,7 @@ const setHeaderStyle = (elevation: number, bg: string) => {
     }
 }
 
-const defaultNavigation = {
+const defaultNav = {
     headerStyle: {
         backgroundColor: Colors.primaryColor,
         elevation: 0,
@@ -40,7 +40,7 @@ const homeStack = createStackNavigator(
             tabBarIcon: ({ tintColor }: { tintColor: string }) => {
                 return <Icon name={'ios-home'} size={iconSize} color={tintColor} />
             }
-        }
+        },
     }
 )
 
@@ -48,12 +48,23 @@ const trackStack = createStackNavigator(
     { TrackScreen },
     {
         navigationOptions: {
-            tabBarLabel: SCREENS.TRACK,
+            tabBarLabel: 'Track',
             tabBarIcon: ({ tintColor }: { tintColor: string }) => {
                 return <Icon name={'ios-clock'} size={iconSize} color={tintColor} />
             },
         },
-        defaultNavigationOptions: defaultNavigation
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: Colors.primaryColor,
+                elevation: 0,
+            },
+            headerTintColor: Colors.white,
+            headerTitleStyle: {
+                fontWeight: 'bold',
+                textAlign: 'center',
+                flex: 1,
+            },
+        }
     }
 
 )
@@ -67,7 +78,6 @@ const settingsStack = createStackNavigator(
                 return <Icon name={'ios-options'} size={iconSize} color={tintColor} />
             },
             //tabBarColor: Colors.primaryColor
-
         }
     }
 )
@@ -94,8 +104,8 @@ const tabStack = {
 
 
 const defaultBottomOptions = {
-    activeColor: Colors.green,
-    inactiveColor: Colors.lightGray,
+    activeColor: Colors.white,
+    inactiveColor: Colors.grey,
     labeled: true,
     shifting: false,
     barStyle: {

@@ -36,8 +36,11 @@ export const globalContainer = {
 export const input = {
     borderColor: Colors.grey,
     backgroundColor: Colors.white,
-    width: '70%',
-    paddingHorizontal: 20,
     borderRadius: 50,
+    paddingLeft: 20,
+}
 
+export const inputHolder = {
+    width: '80%',
+    marginBottom: 10
 }

@@ -8,7 +8,7 @@ import Categories from '../components/Categories'
 const HomeScreen = () => {
     return (
         <View style={globalContainer}>
-            <Categories />
+            <Categories horizontal={false} />
         </View>
     )
 }

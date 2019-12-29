@@ -6,7 +6,7 @@ import Category from './Category'
 import { CATEGORIES } from '../data/data'
 import { globalTitle, Colors, titleWrapper } from '../global/styles'
 
-const Categories = () => {
+const Categories = ({ numCol, horizontal }: { numCol?: number, horizontal: boolean }) => {
 
     const renderItem = ({ item }: { item: categoryType }) => {
         const { id, title, color } = item
@@ -15,13 +15,11 @@ const Categories = () => {
 
     return (
         <View>
-            <View style={titleWrapper}>
-                <Text style={globalTitle}>Categories List</Text>
-            </View>
             <FlatList
                 data={CATEGORIES}
                 renderItem={renderItem}
-                numColumns={2}
+                numColumns={horizontal ? 1 : numCol ? numCol : 2}
+                horizontal={horizontal}
             />
         </View>
     )
